@@ -1,8 +1,10 @@
-from helper import remove_extra_space, remove_next_line, parse_json_string, remove_array_brackets
-from constants import FILE_PATHS_STEP_4
+from sys import argv
 
-def read_data() -> str:
-    return open(FILE_PATHS_STEP_4["invalid"], "r").read().strip()
+from helper import remove_extra_space, remove_next_line, parse_json_string, remove_array_brackets
+
+def read_data(file_path: str):
+    with open(file_path, "r") as file:
+        return file.read().strip()
 
 def check_object_syntax(data:str):
     if not data:
@@ -75,9 +77,15 @@ def check_key_value(data:str):
     check_type(data[2])
 
 def main():
-    data = read_data()
-    
+    data = read_data(argv[1])
     check_object(data)
     print("Valid JSON \n", data)
 
-main()
+def test(file_path: str) -> str:
+    data = read_data(file_path)
+    check_object(data)
+    return data
+
+
+if __name__ == "__main__":
+    main()
