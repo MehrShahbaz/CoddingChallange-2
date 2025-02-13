@@ -14,3 +14,9 @@ FILE_PATHS_STEP_3 = {
     "valid": "./tests/step3/valid.json",
     "invalid": "./tests/step3/invalid.json",
 }
+
+FILE_PATHS_STEP_4 = {
+    "valid": "./tests/step4/valid.json",
+    "valid2": "./tests/step4/valid2.json",
+    "invalid": "./tests/step4/invalid.json",
+}
